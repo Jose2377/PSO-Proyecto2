@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main() {
-    char* input_filename = "Entradas/Odisea.txt";
+    char* input_filename = "Entradas/Quijote.txt";
     char* output_filename = "Salida.bin";
     char* key = "Hola";
 

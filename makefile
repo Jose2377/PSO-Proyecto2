@@ -1,5 +1,5 @@
 main:
-	mpicc Cifrado.c -o cifrado
+	gcc Cifrado.c -o cifrado
 	./cifrado
 	mpicc Server-cluster.c -o servidor_mpi
 	mpirun -np 4 ./servidor_mpi
@@ -9,5 +9,11 @@ server:
 	mpirun -np 4 ./servidor_mpi
 	
 cifrar:
-	mpicc Cifrado.c -o cifrado
+	gcc Cifrado.c -o cifrado
 	./cifrado
+	
+install:
+	sudo apt update
+	sudo apt install openmpi-bin
+	sudo apt install libopenmpi-dev
+	sudo apt install build-essential
