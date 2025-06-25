@@ -32,6 +32,7 @@ Detalles de diseño:
 
     El funcionamiento del servidor consiste en contar la cantidad de bytes del texto encriptado, los separa equitativamente en cada nodo, donde el nodo 1 toma la parte 1 del texto, el nodo 2 de la parte 2 del texto, y a si sucesivamente, cuando recibe los diccionarios, se tienen 3 separados, se necesita que este compinado para el conteo final, se recorre cada diccionario y cada palabra, agregando estas palabras o sumando el valor a la palabra en caso de que ya se encuentre en el diccionario principal, cuando recorre todos los elementos, recorre por ultima vez el diccionario prinpipal para optener el resultado final, se ve como el siguiente diagrama.
 
-    ![Diagrama Server](Imagenes/Diagrama_server.png)
+![Diagrama Server](Imagenes/Diagrama_server.png)
 
-    La libreria constara de varias funciones lo mas simple y modulado posible para mantener buenas practicas de programacion, cada modulo tiene que ser documentado en su titulo para explicar su funcionamiento y solo documentar el codigo si es fundamental para su funcionamiento.
+    
+La libreria constara de varias funciones lo mas simple y modulado posible para mantener buenas practicas de programacion, cada modulo tiene que ser documentado en su titulo para explicar su funcionamiento y solo documentar el codigo si es fundamental para su funcionamiento.
