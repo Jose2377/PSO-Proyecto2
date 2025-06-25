@@ -26,7 +26,11 @@ Se esta utilizando las siguientes librerias usadas:
         <ctype.h>  // Herramienta basica del proyecto
 
 Detalles de diseño:
-    El encriptado consiste en una encriptacion de llave, donde cada elemento del texto de entrada se le aplica la operacion XOR, en caso de que ya no se tenga mas elementos en la llave, se empieza desde el primer elemento de la llave de nuevo, esta operacion sirve para encripcion y desencripcion puesto que es una operacion que se puede invertir.
+El diagrama del proyecto total se ve de la siguiente manera:
+
+![Diagrama Server](Imagenes/Diagrama.png)
+
+El encriptado consiste en una encriptacion de llave, donde cada elemento del texto de entrada se le aplica la operacion XOR, en caso de que ya no se tenga mas elementos en la llave, se empieza desde el primer elemento de la llave de nuevo, esta operacion sirve para encripcion y desencripcion puesto que es una operacion que se puede invertir.
 
 Como se tiene que similar multiples nodos en una misma computadora debido a la falta de recursos, se opta por simular nodos en la misma computadora pero usando MPI como metodo de comunicacion entre nodos, para intentar mantener la caracteristica de paralelismo real.
 
@@ -34,5 +38,10 @@ El funcionamiento del servidor consiste en contar la cantidad de bytes del texto
 
 ![Diagrama Server](Imagenes/Diagrama_server.png)
 
+El funcionamiento de cada cluster consiste en recibir la parte correspondiente de cada codigo, desencriptara cada byte char del texto encriptado usando el mismo metodo de encriptado usado de XOR, cuando termine, contara cada palabra y lo agrega a su propio diccionario, cuando termine cada palabra, enviara al servidor central el diccionario, se ve como el siguiente diagrama.
+
+![Diagrama Server](Imagenes/Diagrama_cluster.png)
     
 La libreria constara de varias funciones lo mas simple y modulado posible para mantener buenas practicas de programacion, cada modulo tiene que ser documentado en su titulo para explicar su funcionamiento y solo documentar el codigo si es fundamental para su funcionamiento.
+
+El hardware consiste en 3 ejes para el control del lapiz colocados en tornillos, eje vertical y 2 horizontales, junto al driver, se le dara potencia a unos motores, 3 para cada eje, y usando movimientos de tornillos, este se movera, el driver controlara la direccion de giro de los motores, el server junto la libreria y el driver, controlara el lapiz, separa cada letra de la palabra con mayor aparicion del texto encriptado de entrada en una seccion fisica de la superficie, bajara el lapiz para dibujar, cuando termine de escribir la letra, pasara a la siguiente letra de la palabra en la siguiente parte fisica de la superficie, simulando la escritura de datos en leds de 7 segmentos, cuando termine con la palabra terminara con la cantidad de apariciones.
